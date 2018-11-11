@@ -1,0 +1,35 @@
+<div class="ui-g">
+    <div class="ui-g-4"></div>
+    <div class="ui-g-4"><h1>Счет</h1></div>
+  </div>
+
+  <div class="ui-g">
+      <div class="ui-g-6">
+        <h2>Баланс</h2>
+      </div>
+      <div class="ui-g-6">
+          <h2>{{account.remainingAmount}}</h2>
+    
+      </div>
+    
+      <div class="ui-g-6">
+        <h2>Сумма счета</h2>
+      </div>
+      <div class="ui-g-6">
+          <h2>{{account.paymentAmount}}</h2>
+      </div>
+    </div>
+    
+    <div class="ui-g">
+        <div class="ui-g-4"></div>
+        <div class="ui-g-4">
+            <p-button label="Оплатить" (onClick)="makePayment()" [disabled]="!isAuthorized"></p-button>
+        </div>
+      </div>
+
+      <div class="ui-g-4"></div>
+        <div class="ui-g-4">
+            <p-button label="Отменить" (onClick)="cancel()" [disabled]="!isAuthorized"></p-button>
+        </div>
+
+      

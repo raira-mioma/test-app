@@ -1,0 +1,29 @@
+
+<div class="ui-g">
+  <div class="ui-g-4"></div>
+  <div class="ui-g-4"><h1>Авторизация</h1></div>
+</div>
+
+<div class="ui-g">
+  <div class="ui-g-6">
+    <h2>Номер телефона</h2>
+  </div>
+  <div class="ui-g-6">
+      <input type="text" [(ngModel)]="auth.phone" required pInputText />
+
+  </div>
+
+  <div class="ui-g-6">
+    <h2>Пароль</h2>
+  </div>
+  <div class="ui-g-6">
+      <input type="password" [(ngModel)]="auth.password" required minlength="8" pPassword />
+  </div>
+</div>
+
+<div class="ui-g">
+    <div class="ui-g-4"></div>
+    <div class="ui-g-4">
+        <p-button label="Войти" (onClick)="enterAccount()" [disabled]="!isAuthorized"></p-button>
+    </div>
+  </div>
