@@ -23,6 +23,7 @@
     "core-js": "^2.5.4",
     "font-awesome": "^4.7.0",
     "ng-phone-mask": "^0.1.7",
+    "ngx-mask": "^6.5.18",
     "primeicons": "^1.0.0",
     "primeng": "^6.1.6",
     "rxjs": "~6.3.3",
