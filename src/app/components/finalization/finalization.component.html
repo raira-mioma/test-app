@@ -1,3 +1,2 @@
-<p>
-  finalization works!
-</p>
+<p *ngIf="paySuccess && !isLoading">{{successMessage}}</p>
+<p *ngIf="!paySuccess && !isLoading">{{cancelMessage}}</p>

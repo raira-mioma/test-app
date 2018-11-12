@@ -61,7 +61,7 @@ export class AuthorizationComponent implements OnInit {
   }
 
   enterAccount(){
-    this.authService.get().subscribe(x =>   console.log(x));
+    this.authService.get().subscribe();
     this.router.navigateByUrl("/account")
   }
 
