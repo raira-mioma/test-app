@@ -15,6 +15,8 @@ import {NgxMaskModule} from 'ngx-mask';
 import { AuthorizationComponent } from './components/authorization/authorization.component';
 import { AccountComponent } from './components/account/account.component';
 import { FinalizationComponent } from './components/finalization/finalization.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthInMemoryDbService } from './services/auth-in-memory-db.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { FinalizationComponent } from './components/finalization/finalization.co
     InputTextModule, 
     RouterModule, 
     NgxMaskModule.forRoot(), 
-    //HttpClientInMemoryWebApiModule.forRoot(InMemoryDb, { delay: 100 }) : []
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(AuthInMemoryDbService, { delay: 100 })
   ],
   providers: [],
   bootstrap: [AppComponent]

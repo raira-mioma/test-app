@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import { Auth } from 'src/app/models/auth.model';
+import { HttpClient } from '@angular/common/http';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-authorization',
@@ -16,11 +18,11 @@ export class AuthorizationComponent implements OnInit {
   }
 
   isAuthorized: Boolean = false;
-  router: Router;
+  
   auth: Auth;
 
-  constructor(router: Router) { 
-    this.router = router;
+  constructor(private router: Router,private authService: AuthService ) { 
+    
   }
 
 
@@ -59,6 +61,7 @@ export class AuthorizationComponent implements OnInit {
   }
 
   enterAccount(){
+    this.authService.get().subscribe(x =>   console.log(x));
     this.router.navigateByUrl("/account")
   }
 
