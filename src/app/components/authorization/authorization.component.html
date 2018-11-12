@@ -9,16 +9,31 @@
     <h2>Номер телефона</h2>
   </div>
   <div class="ui-g-6">
-      <input type="text" prefix="+7 " mask="(000) 000 00 00" [(ngModel)]="auth.phone" required pInputText />
-      
-
+      <input pInputText 
+      type="text" 
+      prefix="+7 "
+       mask="(000) 000 00 00" 
+       [(ngModel)]="auth.phone" 
+       (ngModelChange)="validateInput()"
+       #phone="ngModel"
+       required
+       minlength=10/>
+       <pre *ngIf="phone.errors" class="error">{{ phone.errors | json}}</pre>
   </div>
 
   <div class="ui-g-6">
     <h2>Пароль</h2>
   </div>
   <div class="ui-g-6">
-      <input type="password" [(ngModel)]="auth.password" required minlength="8" pPassword />
+      <input 
+      pPassword 
+      required 
+      type="password" 
+      [(ngModel)]="auth.password" 
+      minlength="8" 
+      (ngModelChange)="validateInput()"
+      #password="ngModel"/>
+      <pre *ngIf="password.errors" class="error">{{ password.errors | json }}</pre>
   </div>
 </div>
 

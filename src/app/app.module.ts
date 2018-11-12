@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 import {ButtonModule} from 'primeng/button';
 import {InputTextModule} from 'primeng/inputtext';
@@ -30,7 +31,8 @@ import { FinalizationComponent } from './components/finalization/finalization.co
     ButtonModule, 
     InputTextModule, 
     RouterModule, 
-    NgxMaskModule.forRoot()
+    NgxMaskModule.forRoot(), 
+    //HttpClientInMemoryWebApiModule.forRoot(InMemoryDb, { delay: 100 }) : []
   ],
   providers: [],
   bootstrap: [AppComponent]
